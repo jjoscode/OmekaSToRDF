@@ -1,0 +1,482 @@
+@base <http://example.org/resource/> .
+
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <http://schema.org/> .
+@prefix o: <http://omeka.org/vocab#> .
+@prefix ex1: <http://example.org/> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix type: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix idlabfn: <http://example.com/idlab/function/> .
+@prefix ex: <http://example.org/functions#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+<#DB_source> a d2rq:Database;
+    d2rq:jdbcDSN "jdbc:mysql://localhost:3306/OmekaDB" ;
+    d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver" ;
+    d2rq:username "root" ;
+    d2rq:password "nuova_password" .
+
+
+
+
+
+
+<#TriplesMap_ItemIRItoIRI0>
+    a rr:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT resource.id AS id, value.type AS type ,value.value_resource_id AS valueID ,CONCAT(vocabulary.namespace_uri, resource_class.local_name) AS urilabel, value.value AS value, value.type AS type, property.local_name, CONCAT(vocabulary.namespace_uri, property.local_name) AS urilocalname FROM resource join resource_class on resource.resource_class_id = resource_class.id join vocabulary on vocabulary.id = resource_class.vocabulary_id JOIN value ON (resource.id = value.resource_id) JOIN property on value.property_id = property.id WHERE value.subjPIRI is NULL AND value.objPIRI is NULL;"
+    ] ;
+
+    rr:subjectMap [
+        rr:template "{id}" ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate type:type ;
+        rr:objectMap [
+            rml:reference "urilabel";
+            rr:termType rr:IRI;
+        ] ;
+    ] ;
+
+rr:predicateObjectMap [
+    rr:predicateMap [
+        rml:reference "urilocalname" ;
+        rr:termType rr:IRI
+    ] ;
+
+    rr:objectMap [
+        rr:template "{valueID}" ;
+    ]
+] .
+<#TriplesMap_ItemIRItoPIRI>
+    a rr:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT value.ObjPIRI as ObjPIRI, resource.id AS id, value.type AS type ,value.value_resource_id AS valueID ,CONCAT(vocabulary.namespace_uri, resource_class.local_name) AS urilabel, value.value AS value, value.type AS type, property.local_name, CONCAT(vocabulary.namespace_uri, property.local_name) AS urilocalname FROM resource join resource_class on resource.resource_class_id = resource_class.id join vocabulary on vocabulary.id = resource_class.vocabulary_id JOIN value ON (resource.id = value.resource_id) JOIN property on value.property_id = property.id WHERE value.subjPIRI is NULL AND value.objPIRI is NOT NULL;"
+    ] ;
+
+    rr:subjectMap [
+        rr:template "{id}" ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate type:type ;
+        rr:objectMap [
+            rml:reference "urilabel";
+            rr:termType rr:IRI;
+        ] ;
+    ] ;
+
+rr:predicateObjectMap [
+    rr:predicateMap [
+        rml:reference "urilocalname" ;
+        rr:termType rr:IRI
+    ] ;
+
+    rr:objectMap [
+        rml:reference "ObjPIRI" ;
+    ]
+] .
+<#TriplesMap_ItemPIRItoIRI>
+    a rr:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT value.SubjPIRI AS SubjPIRI, resource.id AS id, value.type AS type ,value.value_resource_id AS valueID ,CONCAT(vocabulary.namespace_uri, resource_class.local_name) AS urilabel, value.value AS value, value.type AS type, property.local_name, CONCAT(vocabulary.namespace_uri, property.local_name) AS urilocalname FROM resource join resource_class on resource.resource_class_id = resource_class.id join vocabulary on vocabulary.id = resource_class.vocabulary_id JOIN value ON (resource.id = value.resource_id) JOIN property on value.property_id = property.id WHERE value.subjPIRI is NOT NULL AND value.objPIRI is NULL;"
+    ] ;
+
+    rr:subjectMap [
+        rml:reference "SubjPIRI" ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate type:type ;
+        rr:objectMap [
+            rml:reference "urilabel";
+            rr:termType rr:IRI;
+        ] ;
+    ] ;
+
+rr:predicateObjectMap [
+    rr:predicateMap [
+        rml:reference "urilocalname" ;
+        rr:termType rr:IRI
+    ] ;
+
+    rr:objectMap [
+        rr:template "{valueID}" ;
+    ]
+] .<#TriplesMap_ItemPIRItoPIRI>
+    a rr:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT value.SubjPIRI as SubjPIRI, value.ObjPIRI as ObjPIRI, resource.id AS id, value.type AS type ,value.value_resource_id AS valueID ,CONCAT(vocabulary.namespace_uri, resource_class.local_name) AS urilabel, value.value AS value, value.type AS type, property.local_name, CONCAT(vocabulary.namespace_uri, property.local_name) AS urilocalname FROM resource join resource_class on resource.resource_class_id = resource_class.id join vocabulary on vocabulary.id = resource_class.vocabulary_id JOIN value ON (resource.id = value.resource_id) JOIN property on value.property_id = property.id WHERE value.subjPIRI is NOT NULL AND value.objPIRI is NOT NULL;"
+    ] ;
+
+    rr:subjectMap [
+        rml:reference "SubjPIRI" ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate type:type ;
+        rr:objectMap [
+            rml:reference "urilabel";
+            rr:termType rr:IRI;
+        ] ;
+    ] ;
+
+rr:predicateObjectMap [
+    rr:predicateMap [
+        rml:reference "urilocalname" ;
+        rr:termType rr:IRI
+    ] ;
+
+    rr:objectMap [
+        rml:reference "ObjPIRI" ;
+    ]
+] .<#TriplesMap_Item0>
+    a rr:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT resource.id AS id, value.type AS type ,value.value_resource_id AS valueID ,CONCAT(vocabulary.namespace_uri, resource_class.local_name) AS urilabel, value.value AS value, value.type AS type, property.local_name, CONCAT(vocabulary.namespace_uri, property.local_name) AS urilocalname FROM resource join resource_class on resource.resource_class_id = resource_class.id join vocabulary on vocabulary.id = resource_class.vocabulary_id JOIN value ON (resource.id = value.resource_id AND value.type = 'boolean') JOIN property on value.property_id = property.id WHERE value.subjPIRI is NULL AND value.objPIRI is NULL;"
+    ] ;
+
+    rr:subjectMap [
+        rr:template "{id}" ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate type:type ;
+        rr:objectMap [
+            rml:reference "urilabel";
+            rr:termType rr:IRI;
+        ] ;
+    ] ;
+
+rr:predicateObjectMap [
+    rr:predicateMap [
+        rml:reference "urilocalname" ;
+        rr:termType rr:IRI
+    ] ;
+
+    rr:objectMap [
+        rml:reference "value" ;
+        rr:datatype <http://www.w3.org/2001/XMLSchema#boolean>
+;
+    ]
+] .
+<#TriplesMap_ItemPIRI0>
+    a rr:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT value.SubjPIRI as SubjPIRI, resource.id AS id, value.type AS type ,value.value_resource_id AS valueID ,CONCAT(vocabulary.namespace_uri, resource_class.local_name) AS urilabel, value.value AS value, value.type AS type, property.local_name, CONCAT(vocabulary.namespace_uri, property.local_name) AS urilocalname FROM resource join resource_class on resource.resource_class_id = resource_class.id join vocabulary on vocabulary.id = resource_class.vocabulary_id JOIN value ON (resource.id = value.resource_id AND value.type = 'boolean') JOIN property on value.property_id = property.id WHERE value.subjPIRI is NOT NULL AND value.objPIRI is NULL;"
+    ] ;
+
+    rr:subjectMap [
+        rml:reference "SubjPIRI" ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate type:type ;
+        rr:objectMap [
+            rml:reference "urilabel";
+            rr:termType rr:IRI;
+        ] ;
+    ] ;
+
+rr:predicateObjectMap [
+    rr:predicateMap [
+        rml:reference "urilocalname" ;
+        rr:termType rr:IRI
+    ] ;
+
+    rr:objectMap [
+        rml:reference "value" ;
+        rr:datatype <http://www.w3.org/2001/XMLSchema#boolean>
+;
+    ]
+] .
+<#TriplesMap_Item1>
+    a rr:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT resource.id AS id, value.type AS type ,value.value_resource_id AS valueID ,CONCAT(vocabulary.namespace_uri, resource_class.local_name) AS urilabel, value.value AS value, value.type AS type, property.local_name, CONCAT(vocabulary.namespace_uri, property.local_name) AS urilocalname FROM resource join resource_class on resource.resource_class_id = resource_class.id join vocabulary on vocabulary.id = resource_class.vocabulary_id JOIN value ON (resource.id = value.resource_id AND value.type = 'numeric:integer') JOIN property on value.property_id = property.id WHERE value.subjPIRI is NULL AND value.objPIRI is NULL;"
+    ] ;
+
+    rr:subjectMap [
+        rr:template "{id}" ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate type:type ;
+        rr:objectMap [
+            rml:reference "urilabel";
+            rr:termType rr:IRI;
+        ] ;
+    ] ;
+
+rr:predicateObjectMap [
+    rr:predicateMap [
+        rml:reference "urilocalname" ;
+        rr:termType rr:IRI
+    ] ;
+
+    rr:objectMap [
+        rml:reference "value" ;
+        rr:datatype <http://www.w3.org/2001/XMLSchema#integer>
+;
+    ]
+] .
+<#TriplesMap_ItemPIRI1>
+    a rr:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT value.SubjPIRI as SubjPIRI, resource.id AS id, value.type AS type ,value.value_resource_id AS valueID ,CONCAT(vocabulary.namespace_uri, resource_class.local_name) AS urilabel, value.value AS value, value.type AS type, property.local_name, CONCAT(vocabulary.namespace_uri, property.local_name) AS urilocalname FROM resource join resource_class on resource.resource_class_id = resource_class.id join vocabulary on vocabulary.id = resource_class.vocabulary_id JOIN value ON (resource.id = value.resource_id AND value.type = 'numeric:integer') JOIN property on value.property_id = property.id WHERE value.subjPIRI is NOT NULL AND value.objPIRI is NULL;"
+    ] ;
+
+    rr:subjectMap [
+        rml:reference "SubjPIRI" ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate type:type ;
+        rr:objectMap [
+            rml:reference "urilabel";
+            rr:termType rr:IRI;
+        ] ;
+    ] ;
+
+rr:predicateObjectMap [
+    rr:predicateMap [
+        rml:reference "urilocalname" ;
+        rr:termType rr:IRI
+    ] ;
+
+    rr:objectMap [
+        rml:reference "value" ;
+        rr:datatype <http://www.w3.org/2001/XMLSchema#integer>
+;
+    ]
+] .
+<#TriplesMap_Item2>
+    a rr:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT resource.id AS id, value.type AS type ,value.value_resource_id AS valueID ,CONCAT(vocabulary.namespace_uri, resource_class.local_name) AS urilabel, value.value AS value, value.type AS type, property.local_name, CONCAT(vocabulary.namespace_uri, property.local_name) AS urilocalname FROM resource join resource_class on resource.resource_class_id = resource_class.id join vocabulary on vocabulary.id = resource_class.vocabulary_id JOIN value ON (resource.id = value.resource_id AND value.type = 'literal') JOIN property on value.property_id = property.id WHERE value.subjPIRI is NULL AND value.objPIRI is NULL;"
+    ] ;
+
+    rr:subjectMap [
+        rr:template "{id}" ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate type:type ;
+        rr:objectMap [
+            rml:reference "urilabel";
+            rr:termType rr:IRI;
+        ] ;
+    ] ;
+
+rr:predicateObjectMap [
+    rr:predicateMap [
+        rml:reference "urilocalname" ;
+        rr:termType rr:IRI
+    ] ;
+
+    rr:objectMap [
+        rml:reference "value" ;
+        rr:datatype <http://www.w3.org/2000/01/rdf-schema#Literal>
+;
+    ]
+] .
+<#TriplesMap_ItemPIRI2>
+    a rr:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT value.SubjPIRI as SubjPIRI, resource.id AS id, value.type AS type ,value.value_resource_id AS valueID ,CONCAT(vocabulary.namespace_uri, resource_class.local_name) AS urilabel, value.value AS value, value.type AS type, property.local_name, CONCAT(vocabulary.namespace_uri, property.local_name) AS urilocalname FROM resource join resource_class on resource.resource_class_id = resource_class.id join vocabulary on vocabulary.id = resource_class.vocabulary_id JOIN value ON (resource.id = value.resource_id AND value.type = 'literal') JOIN property on value.property_id = property.id WHERE value.subjPIRI is NOT NULL AND value.objPIRI is NULL;"
+    ] ;
+
+    rr:subjectMap [
+        rml:reference "SubjPIRI" ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate type:type ;
+        rr:objectMap [
+            rml:reference "urilabel";
+            rr:termType rr:IRI;
+        ] ;
+    ] ;
+
+rr:predicateObjectMap [
+    rr:predicateMap [
+        rml:reference "urilocalname" ;
+        rr:termType rr:IRI
+    ] ;
+
+    rr:objectMap [
+        rml:reference "value" ;
+        rr:datatype <http://www.w3.org/2000/01/rdf-schema#Literal>
+;
+    ]
+] .
+<#TriplesMap_ItemLang0>
+    a rr:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT value.lang AS lang, resource.id AS id, value.type AS type ,value.value_resource_id AS valueID ,CONCAT(vocabulary.namespace_uri, resource_class.local_name) AS urilabel, value.value AS value, value.type AS type, property.local_name, CONCAT(vocabulary.namespace_uri, property.local_name) AS urilocalname FROM resource join resource_class on resource.resource_class_id = resource_class.id join vocabulary on vocabulary.id = resource_class.vocabulary_id JOIN value ON (resource.id = value.resource_id AND value.lang = 'en') JOIN property on value.property_id = property.id WHERE value.subjPIRI is NULL AND value.objPIRI is NULL;"
+    ] ;
+
+    rr:subjectMap [
+        rr:template "{id}" ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate type:type ;
+        rr:objectMap [
+            rml:reference "urilabel";
+            rr:termType rr:IRI;
+        ] ;
+    ] ;
+
+rr:predicateObjectMap [
+    rr:predicateMap [
+        rml:reference "urilocalname" ;
+        rr:termType rr:IRI
+    ] ;
+
+    rr:objectMap [
+        rml:reference "value" ;
+        rr:language "en"
+;
+    ]
+] .
+<#TriplesMap_ItemLangPIRI0>
+    a rr:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT value.SubjPIRI as SubjPIRI, resource.id AS id, value.type AS type ,value.value_resource_id AS valueID ,CONCAT(vocabulary.namespace_uri, resource_class.local_name) AS urilabel, value.value AS value, value.type AS type, property.local_name, CONCAT(vocabulary.namespace_uri, property.local_name) AS urilocalname FROM resource join resource_class on resource.resource_class_id = resource_class.id join vocabulary on vocabulary.id = resource_class.vocabulary_id JOIN value ON (resource.id = value.resource_id AND value.lang = 'en' ) JOIN property on value.property_id = property.id WHERE value.subjPIRI is NOT NULL AND value.objPIRI is NULL;"
+    ] ;
+
+    rr:subjectMap [
+        rml:reference "SubjPIRI" ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate type:type ;
+        rr:objectMap [
+            rml:reference "urilabel";
+            rr:termType rr:IRI;
+        ] ;
+    ] ;
+
+rr:predicateObjectMap [
+    rr:predicateMap [
+        rml:reference "urilocalname" ;
+        rr:termType rr:IRI
+    ] ;
+
+    rr:objectMap [
+        rml:reference "value" ;
+        rr:language "en"
+;
+    ]
+] .
+<#TriplesMap_ItemLang1>
+    a rr:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT value.lang AS lang, resource.id AS id, value.type AS type ,value.value_resource_id AS valueID ,CONCAT(vocabulary.namespace_uri, resource_class.local_name) AS urilabel, value.value AS value, value.type AS type, property.local_name, CONCAT(vocabulary.namespace_uri, property.local_name) AS urilocalname FROM resource join resource_class on resource.resource_class_id = resource_class.id join vocabulary on vocabulary.id = resource_class.vocabulary_id JOIN value ON (resource.id = value.resource_id AND value.lang = 'it') JOIN property on value.property_id = property.id WHERE value.subjPIRI is NULL AND value.objPIRI is NULL;"
+    ] ;
+
+    rr:subjectMap [
+        rr:template "{id}" ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate type:type ;
+        rr:objectMap [
+            rml:reference "urilabel";
+            rr:termType rr:IRI;
+        ] ;
+    ] ;
+
+rr:predicateObjectMap [
+    rr:predicateMap [
+        rml:reference "urilocalname" ;
+        rr:termType rr:IRI
+    ] ;
+
+    rr:objectMap [
+        rml:reference "value" ;
+        rr:language "it"
+;
+    ]
+] .
+<#TriplesMap_ItemLangPIRI1>
+    a rr:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT value.SubjPIRI as SubjPIRI, resource.id AS id, value.type AS type ,value.value_resource_id AS valueID ,CONCAT(vocabulary.namespace_uri, resource_class.local_name) AS urilabel, value.value AS value, value.type AS type, property.local_name, CONCAT(vocabulary.namespace_uri, property.local_name) AS urilocalname FROM resource join resource_class on resource.resource_class_id = resource_class.id join vocabulary on vocabulary.id = resource_class.vocabulary_id JOIN value ON (resource.id = value.resource_id AND value.lang = 'it' ) JOIN property on value.property_id = property.id WHERE value.subjPIRI is NOT NULL AND value.objPIRI is NULL;"
+    ] ;
+
+    rr:subjectMap [
+        rml:reference "SubjPIRI" ;
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate type:type ;
+        rr:objectMap [
+            rml:reference "urilabel";
+            rr:termType rr:IRI;
+        ] ;
+    ] ;
+
+rr:predicateObjectMap [
+    rr:predicateMap [
+        rml:reference "urilocalname" ;
+        rr:termType rr:IRI
+    ] ;
+
+    rr:objectMap [
+        rml:reference "value" ;
+        rr:language "it"
+;
+    ]
+] .

@@ -1,0 +1,218 @@
+/* Stile generale della finestra - Dark mode */
+.split-pane {
+    -fx-background-color: #2b2b2b;
+}
+
+/* VBox interno */
+.vbox {
+    -fx-spacing: 10;
+    -fx-padding: 20;
+}
+
+/* Label */
+.label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e0e0e0;
+    -fx-alignment: center-left;
+    -fx-pref-width: 100%;
+}
+
+/* TextField */
+.text-field {
+    -fx-font-size: 13px;
+    -fx-padding: 6 10 6 10;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #555555;
+    -fx-border-width: 1;
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: #e0e0e0;
+    -fx-focus-color: #81a2be;
+    -fx-faint-focus-color: #81a2be33;
+}
+
+/* MenuButton */
+.menu-button {
+    -fx-font-size: 13px;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #555555;
+    -fx-border-width: 1;
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: #e0e0e0;
+}
+.menu-item{
+    -fx-font-size: 13px;
+    -fx-background-radius: 5;
+    -fx-border-color: #555555;
+    -fx-border-width: 1;
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: #e0e0e0;
+}
+
+/* MenuItem hover */
+.menu-item:focused,
+.menu-item:hover {
+    -fx-text-fill: #e0e0e0;
+    -fx-background-color: #505355;
+}
+
+/* Button */
+.button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-padding: 8 16 8 16;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+}
+
+/* Button hover */
+.button:hover {
+    -fx-background-color: #0056b3;
+}
+
+/* TextArea */
+.text-area {
+    -fx-font-size: 13px;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-border-color: #555555;
+    -fx-border-width: 1;
+    -fx-padding: 10;
+    -fx-background-color: #3c3f41; /* sfondo scuro */
+    -fx-text-fill: #e0e0e0;       /* testo chiaro */
+    -fx-focus-color: #81a2be;
+    -fx-faint-focus-color: #81a2be33;
+}
+
+/* Miglioramenti allo stile per una migliore proporzione */
+.text-field, .menu-button {
+    -fx-pref-width: 100%;
+    -fx-max-width: infinity;
+}
+
+/* Assicurarsi che il VBox si espanda correttamente */
+.vbox {
+    -fx-spacing: 10;
+    -fx-padding: 20;
+    -fx-pref-width: 100%;
+}
+
+/* Area di testo che occupa tutto lo spazio disponibile */
+.text-area {
+    -fx-pref-width: 100%;
+    -fx-pref-height: 100%;
+}
+
+/* MenuButton specifico */
+.menu-button {
+    -fx-pref-width: 200px;
+    -fx-max-width: infinity;
+}
+
+.menu-button .label {
+    -fx-pref-width: 180px;
+}
+
+/* Allarga il menu a discesa */
+.context-menu {
+    -fx-pref-width: 200px;
+    -fx-border-color: #555555;
+    -fx-border-width: 1;
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: #e0e0e0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.menu-item {
+    -fx-pref-width: 200px;
+}
+
+.menu-item .label {
+    -fx-pref-width: 180px;
+}
+
+/* Label errore */
+.label#lblErrore {
+    -fx-text-fill: #ff6b6b; /* rosso acceso per errori */
+}
+
+.text-area {
+    -fx-font-size: 13px;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-border-color: #555555;
+    -fx-border-width: 1;
+    -fx-padding: 10;
+    -fx-background-color: #3c3f41; /* bordo esterno */
+    -fx-text-fill: #e0e0e0;
+    -fx-focus-color: #81a2be;
+    -fx-faint-focus-color: #81a2be33;
+}
+
+/* Parte interna della text area */
+.text-area .scroll-pane {
+    -fx-background-color: #3c3f41;
+}
+
+.text-area .scroll-pane .viewport {
+    -fx-background-color: #3c3f41;
+}
+
+.text-area .scroll-pane .content {
+    -fx-background-color: #3c3f41;
+}
+
+/* Colore del testo e del prompt */
+.text-area .text {
+    -fx-fill: #e0e0e0;
+}
+/* Testo placeholder (promptText) nella TextArea */
+
+
+
+/* LISTVIEW - Dark mode */
+.list-view {
+    -fx-background-color: #2b2b2b; /* sfondo generale */
+    -fx-control-inner-background: #2b2b2b; /* area di contenuto */
+    -fx-border-color: #555555;
+    -fx-border-width: 1;
+    -fx-text-fill: #e0e0e0;
+}
+
+/* Celle della ListView */
+.list-cell {
+    -fx-background-color: #2b2b2b;
+    -fx-text-fill: #e0e0e0;
+}
+
+/* Hover su una cella */
+.list-cell:hover {
+    -fx-background-color: #3c3f41;
+}
+
+/* Cella selezionata */
+.list-cell:selected {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+}
+
+/* Scrollbar scura */
+.scroll-bar {
+    -fx-background-color: #2b2b2b;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #555555;
+    -fx-background-radius: 5;
+}
+
+
+.text-area .prompt-text {
+    -fx-fill: #a0a0a0;
+}

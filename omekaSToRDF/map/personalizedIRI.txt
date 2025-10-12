@@ -1,0 +1,6 @@
+18, https://w3id.org/flp/architecturalElementTypes_Thesaurus#courtyard
+32, https://piritopiri/32
+271, http://pipitopiri/271
+155, http://iritopiri/155
+273, http://piritoIRI/273
+312, http://multipletype/312

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.4" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jdv.omekastordf.ViewController">
+   <items>
+   
+       <!-- Pannello sinistro - Input -->
+       <AnchorPane minHeight="0" minWidth="0">
+      <children>
+              <VBox spacing="10" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+                  <padding>
+                  <Insets bottom="20" left="20" right="20" top="20" />
+               </padding>
+                 <children>
+         
+                     <!-- Spacer superiore per centrare -->
+                     <Region VBox.vgrow="ALWAYS" />
+         
+                     <Label fx:id="lblDBURL" minWidth="200.0" text="URL del Database di Omeka S" />
+                     <TextField fx:id="txtfldURLDB" promptText="localhost:3306/OmekaDB" text="localhost:3306/OmekaDB" />
+         
+                     <Label fx:id="lblUsername" minWidth="200.0" text="Username" />
+                     <TextField fx:id="txtfldUsername" promptText="username" text="root" />
+         
+                     <Label fx:id="lblPassword" minWidth="200.0" text="Password" />
+                     <TextField fx:id="txtfldPassword" promptText="password" text="nuova_password" />
+         
+                     <Label fx:id="lblBaseIRI" minWidth="200.0" text="Base IRI" />
+                     <TextField fx:id="txtfldBaseIRI" promptText="http://example.org/resource/" text="http://example.org/resource/" />
+         
+                     <Label fx:id="lblFormato" minWidth="200.0" text="rdfxml" />
+                     <MenuButton fx:id="mnFormato" mnemonicParsing="false" prefWidth="200" text="Formati">
+                         <items>
+                             <MenuItem onAction="#showFormat" text="turtle" />
+                             <MenuItem onAction="#showFormat" text="trig" />
+                             <MenuItem onAction="#showFormat" text="trix" />
+                             <MenuItem onAction="#showFormat" text="nquads" />
+                             <MenuItem onAction="#showFormat" text="rdfxml" />
+                             <MenuItem onAction="#showFormat" text="hdt" />
+                         </items>
+                     </MenuButton>
+                  <Label minWidth="200.0" text="Omeka S type,  IRI Datatype" />
+                  <TextArea fx:id="txtType" minHeight="150.0" prefHeight="400.0" prefWidth="200.0" promptText="boolean, http://www.w3.org/2001/XMLSchema#boolean" text="literal, http://www.w3.org/2000/01/rdf-schema#Literal&#10;boolean, http://www.w3.org/2001/XMLSchema#boolean &#10;numeric:integer, http://www.w3.org/2001/XMLSchema#integer" />
+                  <Label minWidth="200.0" text="Resource ID, Personalized IRI" />
+                  <TextArea fx:id="txtPIRI" minHeight="150.0" minWidth="200.0" prefHeight="200.0" prefWidth="200.0" promptText="1, https://yourpersonalIRI.com/resource/1" text="18, https://w3id.org/flp/architecturalElementTypes_Thesaurus#courtyard&#10;32, https://piritopiri/32&#10;271, http://pipitopiri/271&#10;155, http://iritopiri/155&#10;273, http://piritoIRI/273&#10;312, http://multipletype/312" />
+                     <HBox alignment="CENTER_LEFT" minWidth="200.0" prefHeight="100.0" prefWidth="200.0" spacing="10">
+                         <children>
+                             <Button fx:id="btnGenera" mnemonicParsing="false" onAction="#generateGraph" prefWidth="200" text="Genera grafo RDF" />
+                             <!-- Spacer per spingere la label a destra -->
+                             <Region HBox.hgrow="ALWAYS" />
+                             <Label fx:id="lblErrore" minWidth="200.0" style="-fx-text-fill: red;" text="" />
+                         </children>
+                     </HBox>
+         
+                     <!-- Spacer inferiore per centrare -->
+                     <Region VBox.vgrow="ALWAYS" />
+                 </children>
+              </VBox>
+      </children>
+       </AnchorPane>
+   
+       <!-- Pannello destro - Output -->
+       <AnchorPane minHeight="0" minWidth="0">
+      <children>
+              <ListView fx:id="txtOutput" editable="false" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
+      </children>
+       </AnchorPane>
+   </items>
+</SplitPane>
