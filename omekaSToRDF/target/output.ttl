@@ -1,0 +1,500 @@
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex: <http://example.org/functions#> .
+@prefix ex1: <http://example.org/> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix idlabfn: <http://example.com/idlab/function/> .
+@prefix o: <http://omeka.org/vocab#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://w3id.org/rml/> .
+@prefix schema: <http://schema.org/> .
+@prefix type: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/resource/154> a <https://w3id.org/flp/arhcreo#Function>;
+  <https://w3id.org/flp/arhcreo#title> "Spettacoli"^^rdfs:Literal .
+
+<http://example.org/resource/155> a <https://w3id.org/flp/arhcreo#Function>;
+  <https://w3id.org/flp/arhcreo#title> "Attività Culturale"^^rdfs:Literal .
+
+<http://example.org/resource/156> a <https://w3id.org/flp/arhcreo#Material>;
+  <https://w3id.org/flp/arhcreo#title> "Ghisa"^^rdfs:Literal .
+
+<http://example.org/resource/157> a <https://w3id.org/flp/arhcreo#Material>;
+  <https://w3id.org/flp/arhcreo#title> "Piastrelle"^^rdfs:Literal .
+
+<http://example.org/resource/158> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Fioriere"^^rdfs:Literal .
+
+<http://example.org/resource/373> a <https://w3id.org/flp/arhcreo#AddressSection>;
+  <https://w3id.org/flp/arhcreo#cityName> "Ivrea"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#civicNumbering_digit> 11;
+  <https://w3id.org/flp/arhcreo#civicNumbering_letter> "A"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#countryName> "Italia"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#fullAddress> "Via  Roma 11 A Ivrea TO Piemonte  Italia"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#provinceName> "TO"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#regionName> "Piemonte "^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#toponymName> "Roma"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#toponymQualifier> "Via "^^rdfs:Literal .
+
+<http://example.org/resource/374> a <https://w3id.org/flp/arhcreo#FunctionsInASinglePeriodOfTimeSection>;
+  <https://w3id.org/flp/arhcreo#functionInAPeriodOfTime> <http://example.org/resource/155>,
+    "https://w3id.org/flp/functions_Thesaurus#residential";
+  <https://w3id.org/flp/arhcreo#referencePeriodDate> "2010"^^rdfs:Literal .
+
+<http://example.org/resource/375> a <https://w3id.org/flp/arhcreo#FunctionsInTimeSection>;
+  <https://w3id.org/flp/arhcreo#hasFunctionsInASinglePeriodOfTimeSection> <http://example.org/resource/374> .
+
+<http://example.org/resource/376> a <https://w3id.org/flp/arhcreo#SingleDamagingEventSection>;
+  <https://w3id.org/flp/arhcreo#damagedElementOrPartType> "https://w3id.org/flp/architecturalElementTypes_Thesaurus#electricalSystem";
+  <https://w3id.org/flp/arhcreo#damagingEventType> "https://w3id.org/flp/damagingEventTypes_Thesaurus#fire";
+  <https://w3id.org/flp/arhcreo#referencePeriodDate> "1980"^^rdfs:Literal .
+
+<http://example.org/resource/377> a <https://w3id.org/flp/arhcreo#DamagingEventsSection>;
+  <https://w3id.org/flp/arhcreo#hasSingleDamagingEventSection> <http://example.org/resource/376> .
+
+<http://example.org/resource/378> a <https://w3id.org/flp/arhcreo#BuildingCatalogueRecord>;
+  <https://w3id.org/flp/arhcreo#alternativeName> "Alt 1"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#constructionMaterial> "https://w3id.org/flp/materials_Thesaurus#brick",
+    "https://w3id.org/flp/materials_Thesaurus#reinforcedConcrete";
+  <https://w3id.org/flp/arhcreo#creationEndingDate> "1930"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#creationStartingDate> "1925"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#currentFunction> "https://w3id.org/flp/functions_Thesaurus#residential";
+  <https://w3id.org/flp/arhcreo#dataCreatorName> "Giulio Alfero"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#description> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris bibendum id risus non pharetra. Duis imperdiet tincidunt tincidunt. Mauris suscipit hendrerit nisi, sit amet varius mi semper nec. Nulla suscipit tellus a ante laoreet auctor. Sed ac nulla augue. Proin feugiat non arcu rutrum tempus. In eu odio ut ligula molestie laoreet quis quis mauris. Duis mattis porttitor orci vitae pellentesque. Donec tincidunt in nisi eu sodales. Etiam faucibus odio at magna sagittis, eu cursus diam vulputate. Fusce tempus aliquet nisi eu sodales. Nulla vitae lorem vel ligula rhoncus scelerisque. Maecenas imperdiet elementum dignissim. Nulla libero metus, lacinia eget ex ac, bibendum porta lacus."^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#designDate> "1923"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#designerName> "Figini"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#hasAddressSection> <http://example.org/resource/373>;
+  <https://w3id.org/flp/arhcreo#hasDamagingEventsSection> <http://example.org/resource/377>;
+  <https://w3id.org/flp/arhcreo#hasFunctionsInTimeSection> <http://example.org/resource/375>;
+  <https://w3id.org/flp/arhcreo#hasRelatedDocumentaryResourcesSection> <http://example.org/resource/380>;
+  <https://w3id.org/flp/arhcreo#isOpenToThePublic> true;
+  <https://w3id.org/flp/arhcreo#isPubliclyOwned> true;
+  <https://w3id.org/flp/arhcreo#numberOfAboveGroundStoreys> 3;
+  <https://w3id.org/flp/arhcreo#numberOfBasements> 1;
+  <https://w3id.org/flp/arhcreo#numberOfSemiBasements> 1;
+  <https://w3id.org/flp/arhcreo#originalFunction> "https://w3id.org/flp/functions_Thesaurus#administration";
+  <https://w3id.org/flp/arhcreo#preferredName> "Test Edificio 1"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#recordTitle> "Scheda Edificio N.1"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#relevantArchitecturalElementType> "https://w3id.org/flp/architecturalElementTypes_Thesaurus#balcony",
+    "https://w3id.org/flp/architecturalElementTypes_Thesaurus#courtyard", "https://w3id.org/flp/architecturalElementTypes_Thesaurus#foundations";
+  <https://w3id.org/flp/arhcreo#relevantInspiringDesignPrinciple> "https://w3id.org/flp/designPrinciples_Thesaurus#flexibility";
+  <https://w3id.org/flp/arhcreo#relevantInspiringSocialGoal> "https://w3id.org/flp/socialGoals_Thesaurus#transparency";
+  <https://w3id.org/flp/arhcreo#source> "Architetture Olivetti"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#style> "https://w3id.org/flp/styles_Thesaurus#rationalism";
+  <https://w3id.org/flp/arhcreo#totalNumberOfStoreys> 5 .
+
+<http://example.org/resource/379> a <https://w3id.org/flp/arhcreo#SingleRelatedDocumentaryResourceSection>;
+  <https://w3id.org/flp/arhcreo#referenceType> "https://w3id.org/flp/referenceTypes_Thesaurus#mention";
+  <https://w3id.org/flp/arhcreo#referredElementOrPartType> "https://w3id.org/flp/architecturalElementTypes_Thesaurus#ceiling";
+  <https://w3id.org/flp/arhcreo#relatedDocumentaryResourceCR> <https://www.archivioolivetti.it/scheda/XYZ> .
+
+<http://example.org/resource/380> a <https://w3id.org/flp/arhcreo#RelatedDocumentaryResourcesSection>;
+  <https://w3id.org/flp/arhcreo#hasSingleRelatedDocumentaryResourceSection> <http://example.org/resource/379> .
+
+<http://example.org/resource/381> a <https://w3id.org/flp/arhcreo#AddressSection>;
+  <https://w3id.org/flp/arhcreo#civicNumbering_digit> 1;
+  <https://w3id.org/flp/arhcreo#civicNumbering_letter> "A"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#countryName> "Italia"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#fullAddress> "Via Jervis 1 A    Italia"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#toponymName> "Jervis"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#toponymQualifier> "Via"^^rdfs:Literal .
+
+<http://example.org/resource/382> a <https://w3id.org/flp/arhcreo#FunctionsInASinglePeriodOfTimeSection>;
+  <https://w3id.org/flp/arhcreo#functionInAPeriodOfTime> "https://w3id.org/flp/functions_Thesaurus#temporaryResidency";
+  <https://w3id.org/flp/arhcreo#referencePeriodEndingDate> "1990"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#referencePeriodStartingDate> "1980"^^rdfs:Literal .
+
+<http://example.org/resource/383> a <https://w3id.org/flp/arhcreo#FunctionsInASinglePeriodOfTimeSection>;
+  <https://w3id.org/flp/arhcreo#functionInAPeriodOfTime> "https://w3id.org/flp/functions_Thesaurus#residential";
+  <https://w3id.org/flp/arhcreo#referencePeriodDate> "1991"^^rdfs:Literal .
+
+<http://example.org/resource/384> a <https://w3id.org/flp/arhcreo#FunctionsInTimeSection>;
+  <https://w3id.org/flp/arhcreo#hasFunctionsInASinglePeriodOfTimeSection> <http://example.org/resource/382>,
+    <http://example.org/resource/383> .
+
+<http://example.org/resource/385> a <https://w3id.org/flp/arhcreo#SingleMaintenanceAndModificationWorkSection>;
+  <https://w3id.org/flp/arhcreo#modifiedElementOrPartType> "https://w3id.org/flp/architecturalElementTypes_Thesaurus#facade";
+  <https://w3id.org/flp/arhcreo#referencePeriodDate> "1985"^^rdfs:Literal .
+
+<http://example.org/resource/386> a <https://w3id.org/flp/arhcreo#MaintenanceAndModificationWorksSection>;
+  <https://w3id.org/flp/arhcreo#hasSingleMaintenanceAndModificationWorkSection> <http://example.org/resource/385> .
+
+<http://example.org/resource/387> a <https://w3id.org/flp/arhcreo#BuildingCatalogueRecord>;
+  <https://w3id.org/flp/arhcreo#constructionMaterial> "https://w3id.org/flp/materials_Thesaurus#glass",
+    "https://w3id.org/flp/materials_Thesaurus#redBrick";
+  <https://w3id.org/flp/arhcreo#creationEndingDate> "1980"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#dataCreatorName> "Giulio Alfero"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#description> """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi metus sem, feugiat pharetra enim sit amet, laoreet commodo elit. Ut a risus blandit, pharetra erat ut, ullamcorper mauris. Nulla vel porttitor sem. Etiam ac fringilla arcu. Morbi dapibus condimentum maximus. Sed volutpat suscipit bibendum. Fusce condimentum pulvinar suscipit. Nullam facilisis tincidunt libero, vitae vehicula ligula dictum vel. Aenean scelerisque libero vel convallis tincidunt. In aliquam, nulla vitae dignissim eleifend, ex nisi vulputate quam, accumsan volutpat purus risus sit amet elit. Aliquam pulvinar augue orci, vitae sollicitudin metus sodales eu.
+
+"""^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#designDate> "1960"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#designerName> "Figini"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#hasAddressSection> <http://example.org/resource/381>;
+  <https://w3id.org/flp/arhcreo#hasFunctionsInTimeSection> <http://example.org/resource/384>;
+  <https://w3id.org/flp/arhcreo#hasMaintenanceAndModificationWorksSection> <http://example.org/resource/386>;
+  <https://w3id.org/flp/arhcreo#isOpenToThePublic> true;
+  <https://w3id.org/flp/arhcreo#isPubliclyOwned> false;
+  <https://w3id.org/flp/arhcreo#preferredName> "Edificio 2"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#recordTitle> "Scheda Edificio N.2"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#relevantInspiringSocialGoal> "https://w3id.org/flp/socialGoals_Thesaurus#transparency";
+  <https://w3id.org/flp/arhcreo#style> "https://w3id.org/flp/styles_Thesaurus#organicArchitecture" .
+
+<http://example.org/resource/389> a <https://w3id.org/flp/arhcreo#AddressSection>;
+  <https://w3id.org/flp/arhcreo#cityName> "Ivrea"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#civicNumbering_digit> 3;
+  <https://w3id.org/flp/arhcreo#countryName> "Italia"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#fullAddress> "Via Po 3  Ivrea  Piemonte Italia"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#regionName> "Piemonte"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#toponymName> "Po"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#toponymQualifier> "Via"^^rdfs:Literal .
+
+<http://example.org/resource/390> a <https://w3id.org/flp/arhcreo#ArchitecturalAndLanscapeComplexCatalogueRecord>;
+  <https://w3id.org/flp/arhcreo#belongsTo> "https://w3id.org/flp/collection_Thesaurus#Ivrea-UNESCO-CoreZone";
+  <https://w3id.org/flp/arhcreo#dataCreatorName> "Giulio Alfero"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#description> """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi metus sem, feugiat pharetra enim sit amet, laoreet commodo elit. Ut a risus blandit, pharetra erat ut, ullamcorper mauris. Nulla vel porttitor sem. Etiam ac fringilla arcu. Morbi dapibus condimentum maximus. Sed volutpat suscipit bibendum. Fusce condimentum pulvinar suscipit. Nullam facilisis tincidunt libero, vitae vehicula ligula dictum vel. Aenean scelerisque libero vel convallis tincidunt. In aliquam, nulla vitae dignissim eleifend, ex nisi vulputate quam, accumsan volutpat purus risus sit amet elit. Aliquam pulvinar augue orci, vitae sollicitudin metus sodales eu.
+
+"""^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#hasAddressSection> <http://example.org/resource/389>;
+  <https://w3id.org/flp/arhcreo#includedArchitecturalAndLanscapeAssetCR> <http://example.org/resource/378>,
+    <http://example.org/resource/387>;
+  <https://w3id.org/flp/arhcreo#preferredName> "Complesso 1"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#recordTitle> "Scheda Complesso N.1"^^rdfs:Literal .
+
+<http://example.org/resource/391> a <https://w3id.org/flp/arhcreo#AddressSection>;
+  <https://w3id.org/flp/arhcreo#cityName> "Torino"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#civicNumbering_digit> 10;
+  <https://w3id.org/flp/arhcreo#countryName> "Italia"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#fullAddress> "Via San Donato 10  Torino TO Piemonte Italia"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#provinceName> "TO"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#regionName> "Piemonte"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#toponymName> "San Donato"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#toponymQualifier> "Via"^^rdfs:Literal .
+
+<http://example.org/resource/392> a <https://w3id.org/flp/arhcreo#SingleMaintenanceAndModificationWorkSection>;
+  <https://w3id.org/flp/arhcreo#addedElementOrPartType> "https://w3id.org/flp/architecturalElementTypes_Thesaurus#window";
+  <https://w3id.org/flp/arhcreo#modifiedElementOrPartType> "https://w3id.org/flp/architecturalElementTypes_Thesaurus#courtyard";
+  <https://w3id.org/flp/arhcreo#referencePeriodDate> "1999"^^rdfs:Literal .
+
+<http://example.org/resource/393> a <https://w3id.org/flp/arhcreo#SingleMaintenanceAndModificationWorkSection>;
+  <https://w3id.org/flp/arhcreo#fixedElementOrPartType> "https://w3id.org/flp/architecturalElementTypes_Thesaurus#facade";
+  <https://w3id.org/flp/arhcreo#referencePeriodEndingDate> "2001"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#referencePeriodStartingDate> "2000"^^rdfs:Literal .
+
+<http://example.org/resource/394> a <https://w3id.org/flp/arhcreo#MaintenanceAndModificationWorksSection>;
+  <https://w3id.org/flp/arhcreo#hasSingleMaintenanceAndModificationWorkSection> <http://example.org/resource/392>,
+    <http://example.org/resource/393> .
+
+<http://example.org/resource/395> a <https://w3id.org/flp/arhcreo#BuildingCatalogueRecord>;
+  <https://w3id.org/flp/arhcreo#constructionMaterial> "https://w3id.org/flp/materials_Thesaurus#glass",
+    "https://w3id.org/flp/materials_Thesaurus#reinforcedConcrete";
+  <https://w3id.org/flp/arhcreo#creationEndingDate> "1990"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#creationStartingDate> "1985"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#dataCreatorName> "Giulio Alfero"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#designDate> "1980"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#designerName> "Figini"^^rdfs:Literal, "Pollini"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#hasAddressSection> <http://example.org/resource/391>;
+  <https://w3id.org/flp/arhcreo#hasMaintenanceAndModificationWorksSection> <http://example.org/resource/394>;
+  <https://w3id.org/flp/arhcreo#isOpenToThePublic> false;
+  <https://w3id.org/flp/arhcreo#isPubliclyOwned> true;
+  <https://w3id.org/flp/arhcreo#numberOfAboveGroundStoreys> 1;
+  <https://w3id.org/flp/arhcreo#numberOfBasements> 1;
+  <https://w3id.org/flp/arhcreo#numberOfSemiBasements> 0;
+  <https://w3id.org/flp/arhcreo#preferredName> "Edificio 3"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#recordTitle> "Scheda Edificio N.3"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#relevantInspiringDesignPrinciple> "https://w3id.org/flp/designPrinciples_Thesaurus#flexibility";
+  <https://w3id.org/flp/arhcreo#relevantInspiringSocialGoal> "https://w3id.org/flp/socialGoals_Thesaurus#centralityOfThePerson";
+  <https://w3id.org/flp/arhcreo#style> "https://w3id.org/flp/styles_Thesaurus#rationalism";
+  <https://w3id.org/flp/arhcreo#totalNumberOfStoreys> 2 .
+
+<http://example.org/resource/396> a <https://w3id.org/flp/arhcreo#AddressSection>;
+  <https://w3id.org/flp/arhcreo#cityName> "Ivrea"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#civicNumbering_digit> 5;
+  <https://w3id.org/flp/arhcreo#countryName> "Italia"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#fullAddress> "Via Roma 5  Ivrea TO Piemonte Italia"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#provinceName> "TO"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#regionName> "Piemonte"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#toponymName> "Roma"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#toponymQualifier> "Via"^^rdfs:Literal .
+
+<http://example.org/resource/397> a <https://w3id.org/flp/arhcreo#SingleMaintenanceAndModificationWorkSection>;
+  <https://w3id.org/flp/arhcreo#addedElementOrPartType> "https://w3id.org/flp/architecturalElementTypes_Thesaurus#partitionWall";
+  <https://w3id.org/flp/arhcreo#referencePeriodDate> "2000"^^rdfs:Literal .
+
+<http://example.org/resource/398> a <https://w3id.org/flp/arhcreo#MaintenanceAndModificationWorksSection>;
+  <https://w3id.org/flp/arhcreo#hasSingleMaintenanceAndModificationWorkSection> <http://example.org/resource/397> .
+
+<http://example.org/resource/399> a <https://w3id.org/flp/arhcreo#SingleDamagingEventSection>;
+  <https://w3id.org/flp/arhcreo#damagedElementOrPartType> "https://w3id.org/flp/architecturalElementTypes_Thesaurus#plumbingSystem";
+  <https://w3id.org/flp/arhcreo#damagingEventType> "https://w3id.org/flp/damagingEventTypes_Thesaurus#earthquake";
+  <https://w3id.org/flp/arhcreo#referencePeriodDate> "1999"^^rdfs:Literal .
+
+<http://example.org/resource/400> a <https://w3id.org/flp/arhcreo#DamagingEventsSection>;
+  <https://w3id.org/flp/arhcreo#hasSingleDamagingEventSection> <http://example.org/resource/399> .
+
+<http://example.org/resource/401> a <https://w3id.org/flp/arhcreo#BuildingCatalogueRecord>;
+  <https://w3id.org/flp/arhcreo#alternativeName> "Alt 1"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#constructionMaterial> "https://w3id.org/flp/materials_Thesaurus#reinforcedConcrete";
+  <https://w3id.org/flp/arhcreo#creationEndingDate> "1998"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#creationStartingDate> "1992"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#dataCreatorName> "Giulio Alfero"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#designContributorName> "Figini"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#designerName> "Pollini"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#hasAddressSection> <http://example.org/resource/396>;
+  <https://w3id.org/flp/arhcreo#hasDamagingEventsSection> <http://example.org/resource/400>;
+  <https://w3id.org/flp/arhcreo#hasMaintenanceAndModificationWorksSection> <http://example.org/resource/398>;
+  <https://w3id.org/flp/arhcreo#isOpenToThePublic> false;
+  <https://w3id.org/flp/arhcreo#isPubliclyOwned> true;
+  <https://w3id.org/flp/arhcreo#numberOfAboveGroundStoreys> 1;
+  <https://w3id.org/flp/arhcreo#numberOfBasements> 0;
+  <https://w3id.org/flp/arhcreo#numberOfSemiBasements> 0;
+  <https://w3id.org/flp/arhcreo#originalFunction> "https://w3id.org/flp/functions_Thesaurus#sportingActivity";
+  <https://w3id.org/flp/arhcreo#preferredName> "Palestra"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#recordTitle> "Scheda Edificio N.4"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#relevantArchitecturalElementType> "https://w3id.org/flp/architecturalElementTypes_Thesaurus#facade";
+  <https://w3id.org/flp/arhcreo#style> "https://w3id.org/flp/styles_Thesaurus#rationalism";
+  <https://w3id.org/flp/arhcreo#totalNumberOfStoreys> 1 .
+
+<http://example.org/resource/402> a <https://w3id.org/flp/arhcreo#ArchitecturalAndLanscapeComplexCatalogueRecord>;
+  <https://w3id.org/flp/arhcreo#dataCreatorName> "Giulio Alfero"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#dataManagerName> "Giulio Alfero"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#description> """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi metus sem, feugiat pharetra enim sit amet, laoreet commodo elit. Ut a risus blandit, pharetra erat ut, ullamcorper mauris. Nulla vel porttitor sem. Etiam ac fringilla arcu. Morbi dapibus condimentum maximus. Sed volutpat suscipit bibendum. Fusce condimentum pulvinar suscipit. Nullam facilisis tincidunt libero, vitae vehicula ligula dictum vel. Aenean scelerisque libero vel convallis tincidunt. In aliquam, nulla vitae dignissim eleifend, ex nisi vulputate quam, accumsan volutpat purus risus sit amet elit. Aliquam pulvinar augue orci, vitae sollicitudin metus sodales eu.
+
+"""^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#hasRelatedDocumentaryResourcesSection> <http://example.org/resource/404>;
+  <https://w3id.org/flp/arhcreo#includedArchitecturalAndLanscapeAssetCR> <http://example.org/resource/401>;
+  <https://w3id.org/flp/arhcreo#preferredName> "Complesso 2"^^rdfs:Literal;
+  <https://w3id.org/flp/arhcreo#recordTitle> "Scheda Complesso N.2"^^rdfs:Literal .
+
+<http://example.org/resource/403> a <https://w3id.org/flp/arhcreo#SingleRelatedDocumentaryResourceSection>;
+  <https://w3id.org/flp/arhcreo#referenceType> "https://w3id.org/flp/referenceTypes_Thesaurus#planimetryRepresentation";
+  <https://w3id.org/flp/arhcreo#relatedDocumentaryResourceCR> <https://www.archivioolivetti.it/scheda/XXX> .
+
+<http://example.org/resource/404> a <https://w3id.org/flp/arhcreo#RelatedDocumentaryResourcesSection>;
+  <https://w3id.org/flp/arhcreo#hasSingleRelatedDocumentaryResourceSection> <http://example.org/resource/403> .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#aboveGroundStorey> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Piano Fuori Terra"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#balcony> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Balcone"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#basement> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Piano Interrato"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#briseSoleil> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Frangisole"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#buildingFinishes> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Finiture Edili"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#ceiling> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Soffitto"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#containmentWall> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Muro di Contenimento"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#courtyard> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Cortile"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#door> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Porta"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#electricalSystem> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Impianto Elettrico"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#externalStairs> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Scala Esterna"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#facade> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Facciata"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#floatingFloor> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Pavimento Flottante"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#floor> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Pavimento"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#foundations> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Fondamenta"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#glassStructure> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Vetrata"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#greenArea> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Green Area"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#groundFloor> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Pianterreno"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#internalStairs> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Scala Interna"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#loadBearingWall> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Muro Portante"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#movingPartitionWall> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Parete Divisoria Mobile"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#parapet> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Parapetto"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#partitionWall> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Parete Divisoria"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#pillar> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Pilastro"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#plumbingSystem> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Impianto Idraulico"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#railing> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Ringhiera"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#roof> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Tetto"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#room> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Stanza"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#semibasement> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Piano Seminterrato"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#stairs> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Scala"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#terrace> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Terrazzo"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#wall> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Muro"^^rdfs:Literal .
+
+<https://w3id.org/flp/architecturalElementTypes_Thesaurus#window> a <https://w3id.org/flp/arhcreo#ArchitecturalElementType>;
+  <https://w3id.org/flp/arhcreo#title> "Finestra"^^rdfs:Literal .
+
+<https://w3id.org/flp/collection_Thesaurus#Ivrea-UNESCO-BufferZone> a <https://w3id.org/flp/arhcreo#Collection>;
+  <https://w3id.org/flp/arhcreo#title> "Ivrea UNESCO Buffer Zone"^^rdfs:Literal .
+
+<https://w3id.org/flp/collection_Thesaurus#Ivrea-UNESCO-CoreZone> a <https://w3id.org/flp/arhcreo#Collection>;
+  <https://w3id.org/flp/arhcreo#title> "Ivrea UNESCO Core Zone"^^rdfs:Literal .
+
+<https://w3id.org/flp/damagingEventTypes_Thesaurus#bombing> a <https://w3id.org/flp/arhcreo#DamagingEventType>;
+  <https://w3id.org/flp/arhcreo#title> "Bombardamento"^^rdfs:Literal .
+
+<https://w3id.org/flp/damagingEventTypes_Thesaurus#earthquake> a <https://w3id.org/flp/arhcreo#DamagingEventType>;
+  <https://w3id.org/flp/arhcreo#title> "Terremoto"^^rdfs:Literal .
+
+<https://w3id.org/flp/damagingEventTypes_Thesaurus#fire> a <https://w3id.org/flp/arhcreo#DamagingEventType>;
+  <https://w3id.org/flp/arhcreo#title> "Incendio"^^rdfs:Literal .
+
+<https://w3id.org/flp/damagingEventTypes_Thesaurus#flood> a <https://w3id.org/flp/arhcreo#DamagingEventType>;
+  <https://w3id.org/flp/arhcreo#title> "Alluvione"^^rdfs:Literal .
+
+<https://w3id.org/flp/damagingEventTypes_Thesaurus#hailstorm> a <https://w3id.org/flp/arhcreo#DamagingEventType>;
+  <https://w3id.org/flp/arhcreo#title> "Grandinata"^^rdfs:Literal .
+
+<https://w3id.org/flp/damagingEventTypes_Thesaurus#strongWind> a <https://w3id.org/flp/arhcreo#DamagingEventType>;
+  <https://w3id.org/flp/arhcreo#title> "Vento Forte"^^rdfs:Literal .
+
+<https://w3id.org/flp/designPrinciples_Thesaurus#flexibility> a <https://w3id.org/flp/arhcreo#DesignPrinciple>;
+  <https://w3id.org/flp/arhcreo#title> "Flessibilità"^^rdfs:Literal .
+
+<https://w3id.org/flp/functions_Thesaurus#administration> a <https://w3id.org/flp/arhcreo#Function>;
+  <https://w3id.org/flp/arhcreo#title> "Amministrazione"^^rdfs:Literal .
+
+<https://w3id.org/flp/functions_Thesaurus#education> a <https://w3id.org/flp/arhcreo#Function>;
+  <https://w3id.org/flp/arhcreo#title> "Formazione"^^rdfs:Literal .
+
+<https://w3id.org/flp/functions_Thesaurus#production> a <https://w3id.org/flp/arhcreo#Function>;
+  <https://w3id.org/flp/arhcreo#title> "Produzione"^^rdfs:Literal .
+
+<https://w3id.org/flp/functions_Thesaurus#residential> a <https://w3id.org/flp/arhcreo#Function>;
+  <https://w3id.org/flp/arhcreo#title> "Abitazione"^^rdfs:Literal .
+
+<https://w3id.org/flp/functions_Thesaurus#services> a <https://w3id.org/flp/arhcreo#Function>;
+  <https://w3id.org/flp/arhcreo#title> "Servizi"^^rdfs:Literal .
+
+<https://w3id.org/flp/functions_Thesaurus#sportingActivity> a <https://w3id.org/flp/arhcreo#Function>;
+  <https://w3id.org/flp/arhcreo#title> "Attività Sportiva"^^rdfs:Literal .
+
+<https://w3id.org/flp/functions_Thesaurus#temporaryResidency> a <https://w3id.org/flp/arhcreo#Function>;
+  <https://w3id.org/flp/arhcreo#title> "Residenza Temporanea"^^rdfs:Literal .
+
+<https://w3id.org/flp/materials_Thesaurus#brick> a <https://w3id.org/flp/arhcreo#Material>;
+  <https://w3id.org/flp/arhcreo#title> "Mattoni"^^rdfs:Literal .
+
+<https://w3id.org/flp/materials_Thesaurus#clinker> a <https://w3id.org/flp/arhcreo#Material>;
+  <https://w3id.org/flp/arhcreo#title> "Clinker"^^rdfs:Literal .
+
+<https://w3id.org/flp/materials_Thesaurus#glass> a <https://w3id.org/flp/arhcreo#Material>;
+  <https://w3id.org/flp/arhcreo#title> "Vetro"^^rdfs:Literal .
+
+<https://w3id.org/flp/materials_Thesaurus#redBrick> a <https://w3id.org/flp/arhcreo#Material>;
+  <https://w3id.org/flp/arhcreo#title> "Mattoni Rossi"^^rdfs:Literal .
+
+<https://w3id.org/flp/materials_Thesaurus#reinforcedConcrete> a <https://w3id.org/flp/arhcreo#Material>;
+  <https://w3id.org/flp/arhcreo#title> "Cemento Armato"^^rdfs:Literal .
+
+<https://w3id.org/flp/referenceTypes_Thesaurus#buildingPlanRepresentation> a <https://w3id.org/flp/arhcreo#ReferenceType>;
+  <https://w3id.org/flp/arhcreo#title> "Rappresentazione pianta edificio"^^rdfs:Literal .
+
+<https://w3id.org/flp/referenceTypes_Thesaurus#elevationRepresentation> a <https://w3id.org/flp/arhcreo#ReferenceType>;
+  <https://w3id.org/flp/arhcreo#title> "Rappresentazione prospetto"^^rdfs:Literal .
+
+<https://w3id.org/flp/referenceTypes_Thesaurus#externalPartsRepresentation_Complete>
+  a <https://w3id.org/flp/arhcreo#ReferenceType>;
+  <https://w3id.org/flp/arhcreo#title> "Rappresentazione parti esterne (completa)"^^rdfs:Literal .
+
+<https://w3id.org/flp/referenceTypes_Thesaurus#externalPartsRepresentation_Partial>
+  a <https://w3id.org/flp/arhcreo#ReferenceType>;
+  <https://w3id.org/flp/arhcreo#title> "Rappresentazione parti esterne (parziale)"^^rdfs:Literal .
+
+<https://w3id.org/flp/referenceTypes_Thesaurus#externalPartsReproduction_Complete>
+  a <https://w3id.org/flp/arhcreo#ReferenceType>;
+  <https://w3id.org/flp/arhcreo#title> "Riproduzione parti esterne (completa)"^^rdfs:Literal .
+
+<https://w3id.org/flp/referenceTypes_Thesaurus#externalPartsReproduction_Partial>
+  a <https://w3id.org/flp/arhcreo#ReferenceType>;
+  <https://w3id.org/flp/arhcreo#title> "Riproduzione parti esterne (parziale)"^^rdfs:Literal .
+
+<https://w3id.org/flp/referenceTypes_Thesaurus#internalPartsRepresentation_Complete>
+  a <https://w3id.org/flp/arhcreo#ReferenceType>;
+  <https://w3id.org/flp/arhcreo#title> "Rappresentazione parti interne (completa)"^^rdfs:Literal .
+
+<https://w3id.org/flp/referenceTypes_Thesaurus#internalPartsRepresentation_Partial>
+  a <https://w3id.org/flp/arhcreo#ReferenceType>;
+  <https://w3id.org/flp/arhcreo#title> "Rappresentazione parti interne (parziale)"^^rdfs:Literal .
+
+<https://w3id.org/flp/referenceTypes_Thesaurus#internalPartsReproduction_Complete>
+  a <https://w3id.org/flp/arhcreo#ReferenceType>;
+  <https://w3id.org/flp/arhcreo#title> "Riproduzione parti interne (completa)"^^rdfs:Literal .
+
+<https://w3id.org/flp/referenceTypes_Thesaurus#internalPartsReproduction_Partial>
+  a <https://w3id.org/flp/arhcreo#ReferenceType>;
+  <https://w3id.org/flp/arhcreo#title> "Riproduzione parti interne (parziale)"^^rdfs:Literal .
+
+<https://w3id.org/flp/referenceTypes_Thesaurus#mention> a <https://w3id.org/flp/arhcreo#ReferenceType>;
+  <https://w3id.org/flp/arhcreo#title> "Menzione"^^rdfs:Literal .
+
+<https://w3id.org/flp/referenceTypes_Thesaurus#planimetryRepresentation> a <https://w3id.org/flp/arhcreo#ReferenceType>;
+  <https://w3id.org/flp/arhcreo#title> "Rappresentazione planimetria"^^rdfs:Literal .
+
+<https://w3id.org/flp/referenceTypes_Thesaurus#sectionRepresentation> a <https://w3id.org/flp/arhcreo#ReferenceType>;
+  <https://w3id.org/flp/arhcreo#title> "Rappresentazione sezione"^^rdfs:Literal .
+
+<https://w3id.org/flp/referenceTypes_Thesaurus#verbalDescription> a <https://w3id.org/flp/arhcreo#ReferenceType>;
+  <https://w3id.org/flp/arhcreo#title> "Descrizione verbale"^^rdfs:Literal .
+
+<https://w3id.org/flp/socialGoals_Thesaurus#centralityOfThePerson> a <https://w3id.org/flp/arhcreo#SocialGoal>;
+  <https://w3id.org/flp/arhcreo#title> "Centralità della Persona"^^rdfs:Literal .
+
+<https://w3id.org/flp/socialGoals_Thesaurus#transparency> a <https://w3id.org/flp/arhcreo#SocialGoal>;
+  <https://w3id.org/flp/arhcreo#title> "Trasparenza"^^rdfs:Literal .
+
+<https://w3id.org/flp/styles_Thesaurus#organicArchitecture> a <https://w3id.org/flp/arhcreo#Style>;
+  <https://w3id.org/flp/arhcreo#title> "Architettura Organica"^^rdfs:Literal .
+
+<https://w3id.org/flp/styles_Thesaurus#rationalism> a <https://w3id.org/flp/arhcreo#Style>;
+  <https://w3id.org/flp/arhcreo#title> "Razionalismo"^^rdfs:Literal .
